@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
-        <title>To-do List</title>
+        <title>to-do list</title>
     </head>
     <script>
         function buscaDadosLocalstorage(){ // Carrega dados armazenados no localstorage
@@ -111,6 +111,14 @@
             }
             if (count==0)  localStorage.clear(obj) //Se o conteúdo do objeto no local storage for vazio remove o objeto 
         }
+    // Listener para acionar a adição de tarefas também pela tecla enter
+    document.addEventListener("keypress", function(e) {
+        if(e.key === 'Enter') {
+            var btn = document.querySelector("#btn1");
+            btn.click();
+        }
+    });
+
    </script>
     <style>
         .containerlinha{
@@ -162,7 +170,7 @@
     <body onload="montaTela()" style="background-color: black;">
         <div class="borda bordaarredondada principal" >
             <div class="containerlinha" >
-                   <h1 >Lista de Afazeres</h1>
+                    <h1 >Lista de Afazeres</h1>
             </div>
             <HR>
             <div class="containerlinha">
